@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { personalInfo } from "@/lib/data";
 
@@ -31,6 +32,24 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="flex justify-center mb-6"
+          >
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl ring-4 ring-primary/10">
+              <Image
+                src="/profile-photo.png"
+                alt="Prince Verma"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

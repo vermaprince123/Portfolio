@@ -12,7 +12,7 @@ export const personalInfo = {
   website: "https://princetechportfolio.com/",
   bio: "Software Engineer with 3+ years of experience in JavaScript, ReactJS, Angular, and React Native at OneAssist Consumer Solutions. Passionate about building scalable web applications and innovative solutions.",
   about:
-    "I'm a dedicated Software Engineer with over 3 years of experience working at OneAssist Consumer Solutions, a product-based company. I specialize in building modern web applications using React, Java, JavaScript, Angular, and React Native. My expertise includes developing responsive, performant applications that deliver outstanding user experiences. I'm passionate about creating innovative solutions and always eager to learn new technologies.",
+    "I'm a dedicated Software Engineer with over 4+ years of experience working at OneAssist Consumer Solutions, a product-based company. I specialize in building modern web applications using React, Java, JavaScript, Angular, and React Native. My expertise includes developing responsive, performant applications that deliver outstanding user experiences. I'm passionate about creating innovative solutions and always eager to learn new technologies.",
 };
 
 export const skills = [
@@ -56,6 +56,54 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    title: "Ishant Commerce Classes",
+    description:
+      "A modern, responsive Next.js website for Ishant Commerce Classes, a premier commerce coaching institute. Features include tutor profiles, subject pages, city-based centers, testimonials, and a comprehensive gallery showcasing the institute's impact.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    githubUrl: "https://github.com/vermaprince123/ishant-commerce-classes",
+    liveUrl: null,
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Edignite",
+    description:
+      "A modern Next.js website for Edignite NGO, showcasing their mission, programs, events, and impact. Features include donation functionality, volunteer registration, photo gallery, and comprehensive information about NGO initiatives.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Web Development",
+    ],
+    githubUrl: "https://github.com/vermaprince123/edignite",
+    liveUrl: null,
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "Portfolio Website",
+    description:
+      "A modern, responsive portfolio website built with Next.js and TypeScript. Features include animated sections, project showcase, skills display, experience timeline, and contact form. Fully responsive with dark mode support.",
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    githubUrl: "https://github.com/vermaprince123/Portfolio",
+    liveUrl: "https://princetechportfolio.com/",
+    featured: true,
+  },
+  {
+    id: 4,
     title: "Algorithms Kit",
     description:
       "An NPM package for advanced data structures and algorithms. A comprehensive library providing efficient implementations of common algorithms and data structures for JavaScript developers.",
@@ -65,37 +113,33 @@ export const projects = [
     featured: true,
   },
   {
-    id: 2,
-    title: "Edignite NGO Website",
-    description:
-      "A modern, responsive website for Edignite NGO built with JavaScript. Features clean design, smooth user experience, and optimized performance for showcasing NGO initiatives and impact.",
-    technologies: ["JavaScript", "HTML", "CSS", "Web Development"],
-    githubUrl: "https://github.com/vermaprince123/edigniteNGOWebsite",
-    liveUrl: null,
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Visual Sorting Project",
-    description:
-      "An interactive visualization tool for sorting algorithms. Watch algorithms like Bubble Sort, Quick Sort, and Merge Sort in action with beautiful visual representations.",
-    technologies: ["JavaScript", "React", "Algorithms", "Visualization"],
-    githubUrl: "https://github.com/vermaprince123/visual-sorting-project",
-    liveUrl: null,
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Tutor App",
-    description:
-      "A comprehensive tutoring application built with JavaScript. Features include student management, scheduling, and interactive learning tools for educators and students.",
-    technologies: ["JavaScript", "React", "Web Development"],
-    githubUrl: "https://github.com/vermaprince123/tutorApp",
-    liveUrl: null,
-    featured: false,
-  },
-  {
     id: 5,
+    title: "ColorPicker",
+    description:
+      "A powerful browser extension for developers and designers to quickly pick colors from any webpage. Features include color picker tool, hex/RGB/HSL conversion, color history, and easy copy-to-clipboard functionality.",
+    technologies: [
+      "JavaScript",
+      "Chrome Extension",
+      "Browser API",
+      "HTML",
+      "CSS",
+    ],
+    githubUrl: "https://github.com/vermaprince123/ColorPicker",
+    liveUrl: null,
+    featured: true,
+  },
+  {
+    id: 8,
+    title: "Prince Nice Theme",
+    description:
+      "A beautiful and modern VS Code theme extension designed for comfortable coding. Features carefully selected color schemes optimized for readability, syntax highlighting, and reduced eye strain during long coding sessions.",
+    technologies: ["JSON", "VS Code Theme", "Color Design", "Extension"],
+    githubUrl: "https://github.com/vermaprince123/prince-nice-theme",
+    liveUrl: null,
+    featured: true,
+  },
+  {
+    id: 6,
     title: "DSA Projects",
     description:
       "A collection of Data Structures and Algorithms projects demonstrating various problem-solving techniques and implementations. Includes solutions to common coding challenges.",
@@ -110,7 +154,7 @@ export const projects = [
     featured: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "Introduction to MySQL",
     description:
       "Educational repository providing comprehensive introduction to MySQL database management. Includes examples, best practices, and common use cases for database operations.",

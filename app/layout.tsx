@@ -28,10 +28,24 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   authors: [{ name: "Prince Verma" }],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+    shortcut: "/icon.png",
+  },
   openGraph: {
     title: "Prince Verma - Software Engineer",
-    description: "Portfolio of Prince Verma, a Software Engineer specializing in React and Next.js",
+    description:
+      "Portfolio of Prince Verma, a Software Engineer specializing in React and Next.js",
     type: "website",
+    images: [
+      {
+        url: "/profile-photo.png",
+        width: 1200,
+        height: 630,
+        alt: "Prince Verma - Software Engineer",
+      },
+    ],
   },
 };
 
@@ -58,4 +72,3 @@ export default function RootLayout({
     </html>
   );
 }
-

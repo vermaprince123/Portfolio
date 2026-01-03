@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { personalInfo } from "@/lib/data";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -52,6 +53,21 @@ export function About() {
           <Card className="border-2">
             <CardContent className="p-8 md:p-12">
               <motion.div variants={itemVariants} className="space-y-6">
+                {/* Profile Photo in About Section */}
+                <motion.div
+                  variants={itemVariants}
+                  className="flex justify-center mb-6"
+                >
+                  <div className="relative w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg ring-2 ring-primary/10">
+                    <Image
+                      src="/profile-photo.png"
+                      alt="Prince Verma"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </motion.div>
+
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {personalInfo.about}
                 </p>
