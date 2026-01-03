@@ -9,8 +9,7 @@ export const personalInfo = {
   github: "https://github.com/vermaprince123",
   linkedin: "https://linkedin.com/in/prince-verma-edignite",
   twitter: "https://twitter.com/Princev21752448",
-  website: "https://princetechportfolio.com/",
-  bio: "Software Engineer with 3+ years of experience in JavaScript, ReactJS, Angular, and React Native at OneAssist Consumer Solutions. Passionate about building scalable web applications and innovative solutions.",
+  bio: "Software Engineer with 4+ years of experience in JavaScript, ReactJS, Angular, and React Native at OneAssist Consumer Solutions. Passionate about building scalable web applications and innovative solutions.",
   about:
     "I'm a dedicated Software Engineer with over 4+ years of experience working at OneAssist Consumer Solutions, a product-based company. I specialize in building modern web applications using React, Java, JavaScript, Angular, and React Native. My expertise includes developing responsive, performant applications that deliver outstanding user experiences. I'm passionate about creating innovative solutions and always eager to learn new technologies.",
 };

@@ -13,10 +13,6 @@ export function Footer() {
     { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
   ];
 
-  if (personalInfo.website) {
-    socialLinks.push({ icon: Globe, href: personalInfo.website, label: "Website" });
-  }
-
   return (
     <footer className="border-t bg-background/95 backdrop-blur">
       <div className="container mx-auto px-4 py-8">
@@ -57,4 +53,3 @@ export function Footer() {
     </footer>
   );
 }
-
