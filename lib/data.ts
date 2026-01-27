@@ -162,6 +162,23 @@ export const projects = [
     liveUrl: null,
     featured: false,
   },
+  {
+    id: 9,
+    title: "Spring Boot Store Project",
+    description:
+      "A comprehensive Spring Boot e-commerce store application demonstrating RESTful API development, database integration, and backend architecture. Part of the Spring Boot Fundamentals course, featuring clean code structure with commits organized by lessons.",
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "MySQL",
+      "Maven",
+      "Backend Development",
+    ],
+    githubUrl: "https://github.com/vermaprince123/Spring-Boot-Store-Project",
+    liveUrl: null,
+    featured: true,
+  },
 ];
 
 export const experience = [
