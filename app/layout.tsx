@@ -49,6 +49,20 @@ export const metadata: Metadata = {
       },
     ],
   },
+  manifest: "/manifest.json",
+  themeColor: "#000000",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Prince Verma Portfolio",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: "cover",
+  },
 };
 
 export default function RootLayout({
