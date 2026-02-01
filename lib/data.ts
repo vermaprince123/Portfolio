@@ -129,11 +129,11 @@ export const projects = [
   },
   {
     id: 8,
-    title: "Prince Nice Theme",
+    title: "Vibrant Dark Pro(VS Code Theme)",
     description:
       "A beautiful and modern VS Code theme extension designed for comfortable coding. Features carefully selected color schemes optimized for readability, syntax highlighting, and reduced eye strain during long coding sessions.",
     technologies: ["JSON", "VS Code Theme", "Color Design", "Extension"],
-    githubUrl: "https://github.com/vermaprince123/prince-nice-theme",
+    githubUrl: "https://github.com/vermaprince123/prince_nice_theme",
     liveUrl: null,
     featured: true,
   },
