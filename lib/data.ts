@@ -393,6 +393,6 @@ export const books = [
     year: "2024",
     description: "Your Journey to Mastery - A guide to becoming a better programmer",
     status: "Completed",
-    image: "/achievements/books/pragmatic-programmer.jpg",
+    image: "/achievements/books/pragmatic-p.jpg",
   },
 ];
