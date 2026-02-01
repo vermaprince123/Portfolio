@@ -93,196 +93,213 @@ export function Achievements() {
         </motion.div>
 
         {/* Content */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto"
-        >
-          {activeTab === "certificates" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {certificates.map((cert) => (
-                <motion.div key={cert.id} variants={itemVariants}>
-                  <Card className="h-full hover:border-primary/50 transition-colors group overflow-hidden">
-                    {cert.image && (
-                      <div 
-                        className="relative w-full h-48 bg-muted overflow-hidden cursor-pointer"
-                        onClick={() => setSelectedImage(cert.image || null)}
-                      >
-                        <Image
-                          src={cert.image}
-                          alt={`${cert.title} certificate`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                          <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                      </div>
-                    )}
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                            <Award className="h-6 w-6 text-primary" />
-                          </div>
-                          <div>
-                            <CardTitle className="text-xl mb-1">{cert.title}</CardTitle>
-                            <CardDescription className="text-primary font-medium">
-                              {cert.issuer}
-                            </CardDescription>
+        <div className="max-w-6xl mx-auto">
+          <AnimatePresence mode="wait">
+            {activeTab === "certificates" && (
+              <motion.div
+                key="certificates"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {certificates.map((cert) => (
+                  <motion.div key={cert.id} variants={itemVariants}>
+                    <Card className="h-full hover:border-primary/50 transition-colors group overflow-hidden">
+                      {cert.image && (
+                        <div 
+                          className="relative w-full h-48 bg-muted overflow-hidden cursor-pointer"
+                          onClick={() => setSelectedImage(cert.image || null)}
+                        >
+                          <Image
+                            src={cert.image}
+                            alt={`${cert.title} certificate`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                           </div>
                         </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {cert.description}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-4 text-sm">
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar className="h-4 w-4" />
-                          <span>{cert.date}</span>
+                      )}
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                              <Award className="h-6 w-6 text-primary" />
+                            </div>
+                            <div>
+                              <CardTitle className="text-xl mb-1">{cert.title}</CardTitle>
+                              <CardDescription className="text-primary font-medium">
+                                {cert.issuer}
+                              </CardDescription>
+                            </div>
+                          </div>
                         </div>
-                        {cert.certificateId && (
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {cert.description}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-4 text-sm">
+                          <div className="flex items-center gap-2 text-muted-foreground">
+                            <Calendar className="h-4 w-4" />
+                            <span>{cert.date}</span>
+                          </div>
+                          {cert.certificateId && (
+                            <div className="flex items-center gap-2">
+                              <span className="font-mono text-xs bg-muted px-2 py-1 rounded border border-border">
+                                ID: {cert.certificateId}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === "courses" && (
+              <motion.div
+                key="courses"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {courses.map((course) => (
+                  <motion.div key={course.id} variants={itemVariants}>
+                    <Card className="h-full hover:border-primary/50 transition-colors group overflow-hidden">
+                      {course.image && (
+                        <div 
+                          className="relative w-full h-48 bg-muted overflow-hidden cursor-pointer"
+                          onClick={() => setSelectedImage(course.image || null)}
+                        >
+                          <Image
+                            src={course.image}
+                            alt={`${course.title} course`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </div>
+                        </div>
+                      )}
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                              <GraduationCap className="h-6 w-6 text-primary" />
+                            </div>
+                            <div>
+                              <CardTitle className="text-xl mb-1">{course.title}</CardTitle>
+                              <CardDescription>{course.platform}</CardDescription>
+                            </div>
+                          </div>
                           <div className="flex items-center gap-2">
-                            <span className="font-mono text-xs bg-muted px-2 py-1 rounded border border-border">
-                              ID: {cert.certificateId}
-                            </span>
+                            {course.status === "Completed" ? (
+                              <CheckCircle2 className="h-5 w-5 text-primary" />
+                            ) : (
+                              <Clock className="h-5 w-5 text-muted-foreground" />
+                            )}
                           </div>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          )}
+                        </div>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {course.description}
+                        </p>
+                        <div className="flex items-center gap-2 text-sm">
+                          <Calendar className="h-4 w-4 text-muted-foreground" />
+                          <span className="text-muted-foreground">{course.year}</span>
+                          <span className="ml-auto px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
+                            {course.status}
+                          </span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
 
-          {activeTab === "courses" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {courses.map((course) => (
-                <motion.div key={course.id} variants={itemVariants}>
-                  <Card className="h-full hover:border-primary/50 transition-colors group overflow-hidden">
-                    {course.image && (
-                      <div 
-                        className="relative w-full h-48 bg-muted overflow-hidden cursor-pointer"
-                        onClick={() => setSelectedImage(course.image || null)}
-                      >
-                        <Image
-                          src={course.image}
-                          alt={`${course.title} course`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                          <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                      </div>
-                    )}
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                            <GraduationCap className="h-6 w-6 text-primary" />
-                          </div>
-                          <div>
-                            <CardTitle className="text-xl mb-1">{course.title}</CardTitle>
-                            <CardDescription>{course.platform}</CardDescription>
+            {activeTab === "books" && (
+              <motion.div
+                key="books"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {books.map((book) => (
+                  <motion.div key={book.id} variants={itemVariants}>
+                    <Card className="h-full hover:border-primary/50 transition-colors group overflow-hidden">
+                      {book.image && (
+                        <div 
+                          className="relative w-full h-64 bg-muted overflow-hidden cursor-pointer"
+                          onClick={() => setSelectedImage(book.image || null)}
+                        >
+                          <Image
+                            src={book.image}
+                            alt={`${book.title} by ${book.author}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                            <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          {course.status === "Completed" ? (
-                            <CheckCircle2 className="h-5 w-5 text-primary" />
-                          ) : (
-                            <Clock className="h-5 w-5 text-muted-foreground" />
-                          )}
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {course.description}
-                      </p>
-                      <div className="flex items-center gap-2 text-sm">
-                        <Calendar className="h-4 w-4 text-muted-foreground" />
-                        <span className="text-muted-foreground">{course.year}</span>
-                        <span className="ml-auto px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
-                          {course.status}
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          )}
-
-          {activeTab === "books" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {books.map((book) => (
-                <motion.div key={book.id} variants={itemVariants}>
-                  <Card className="h-full hover:border-primary/50 transition-colors group overflow-hidden">
-                    {book.image && (
-                      <div 
-                        className="relative w-full h-64 bg-muted overflow-hidden cursor-pointer"
-                        onClick={() => setSelectedImage(book.image || null)}
-                      >
-                        <Image
-                          src={book.image}
-                          alt={`${book.title} by ${book.author}`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                          <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                      </div>
-                    )}
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                            <BookOpen className="h-6 w-6 text-primary" />
+                      )}
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                              <BookOpen className="h-6 w-6 text-primary" />
+                            </div>
+                            <div>
+                              <CardTitle className="text-xl mb-1">{book.title}</CardTitle>
+                              <CardDescription>by {book.author}</CardDescription>
+                            </div>
                           </div>
-                          <div>
-                            <CardTitle className="text-xl mb-1">{book.title}</CardTitle>
-                            <CardDescription>by {book.author}</CardDescription>
+                          <div className="flex items-center gap-2">
+                            {book.status === "Completed" ? (
+                              <CheckCircle2 className="h-5 w-5 text-primary" />
+                            ) : (
+                              <Clock className="h-5 w-5 text-muted-foreground" />
+                            )}
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          {book.status === "Completed" ? (
-                            <CheckCircle2 className="h-5 w-5 text-primary" />
-                          ) : (
-                            <Clock className="h-5 w-5 text-muted-foreground" />
-                          )}
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {book.description}
+                        </p>
+                        <div className="flex items-center gap-4 text-sm">
+                          <div className="flex items-center gap-2 text-muted-foreground">
+                            <Calendar className="h-4 w-4" />
+                            <span>{book.year}</span>
+                          </div>
+                          <span className="ml-auto px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
+                            {book.status}
+                          </span>
                         </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {book.description}
-                      </p>
-                      <div className="flex items-center gap-4 text-sm">
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar className="h-4 w-4" />
-                          <span>{book.year}</span>
-                        </div>
-                        <span className="ml-auto px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
-                          {book.status}
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Image Modal */}
