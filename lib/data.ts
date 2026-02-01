@@ -404,4 +404,13 @@ export const books = [
     status: "Completed",
     image: "/achievements/books/gen-ai.jpg",
   },
+  {
+    id: 7,
+    title: "Advanced React",
+    author: "Nadia Makarevich",
+    year: "2024",
+    description: "Deep dive into React, its performance and investigations",
+    status: "Completed",
+    image: "/achievements/books/gen-ai.jpg",
+  },
 ];
