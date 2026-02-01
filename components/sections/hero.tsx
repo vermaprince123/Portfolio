@@ -56,8 +56,8 @@ export function Hero() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-block"
           >
-            <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-              👋 Welcome to my Portfolio
+            <span className="px-4 py-2 rounded-md bg-primary/10 text-primary text-sm font-medium border border-primary/30 terminal-border font-mono">
+              $ npm run portfolio
             </span>
           </motion.div>
 
@@ -67,7 +67,7 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-5xl md:text-7xl font-bold"
           >
-            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent code-glow">
               {personalInfo.name}
             </span>
           </motion.h1>

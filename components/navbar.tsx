@@ -15,6 +15,7 @@ const navItems = [
   { name: "Skills", href: "/skills" },
   { name: "Projects", href: "/projects" },
   { name: "Experience", href: "/experience" },
+  { name: "Achievements", href: "/achievements" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -47,9 +48,9 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="flex items-center space-x-2 text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
+            className="flex items-center space-x-2 text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent code-glow"
           >
-            <span>Prince Verma</span>
+            <span className="font-mono">&lt;PV/&gt;</span>
           </Link>
 
           {/* Desktop Navigation */}
