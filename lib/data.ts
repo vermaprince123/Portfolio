@@ -395,4 +395,13 @@ export const books = [
     status: "Completed",
     image: "/achievements/books/pragmatic-p.jpg",
   },
+  {
+    id: 6,
+    title: "Generative AI for Everyone",
+    author: "Karthikeyan Sabesan, Sivagamisundari, & Nilip Dutta",
+    year: "2024",
+    description: "Deep Learning, NLP, and LLMs for creative applications",
+    status: "Completed",
+    image: "/achievements/books/gen-ai.jpg",
+  },
 ];
