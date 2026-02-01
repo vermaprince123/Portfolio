@@ -1,11 +1,10 @@
 import { PortfolioLayout } from "@/components/portfolio-layout";
-import { Hero } from "@/components/sections/hero";
+import { Skills } from "@/components/sections/skills";
 
-export default function Home() {
+export default function SkillsPage() {
   return (
     <PortfolioLayout>
-      <Hero />
+      <Skills />
     </PortfolioLayout>
   );
 }
-

@@ -1,11 +1,10 @@
 import { PortfolioLayout } from "@/components/portfolio-layout";
-import { Hero } from "@/components/sections/hero";
+import { About } from "@/components/sections/about";
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <PortfolioLayout>
-      <Hero />
+      <About />
     </PortfolioLayout>
   );
 }
-

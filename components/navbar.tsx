@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -9,17 +10,18 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Skills", href: "/skills" },
+  { name: "Projects", href: "/projects" },
+  { name: "Experience", href: "/experience" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +46,7 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link
-            href="#home"
+            href="/"
             className="flex items-center space-x-2 text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
           >
             <span>Prince Verma</span>
@@ -52,16 +54,27 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors relative group",
+                    isActive
+                      ? "text-foreground"
+                      : "text-foreground/80 hover:text-foreground"
+                  )}
+                >
+                  {item.name}
+                  <span className={cn(
+                    "absolute bottom-0 left-0 h-0.5 bg-primary transition-all",
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  )} />
+                </Link>
+              );
+            })}
             <ThemeToggle />
           </div>
 
@@ -90,16 +103,24 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden py-4 space-y-2 border-t"
           >
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-accent rounded-md transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "block px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                    isActive
+                      ? "text-foreground bg-accent"
+                      : "text-foreground/80 hover:text-foreground hover:bg-accent"
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </motion.div>
         )}
       </div>

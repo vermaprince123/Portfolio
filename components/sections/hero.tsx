@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { personalInfo } from "@/lib/data";
 
 export function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace("#", ""));
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const router = useRouter();
+
+  const scrollToSection = (sectionPath: string) => {
+    router.push(sectionPath);
   };
 
   return (
@@ -90,45 +90,9 @@ export function Hero() {
             {personalInfo.subtitle}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-          >
-            <Button
-              size="lg"
-              onClick={() => scrollToSection("#projects")}
-              className="group"
-            >
-              View My Work
-              <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => scrollToSection("#contact")}
-            >
-              Get In Touch
-            </Button>
-          </motion.div>
+          
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="pt-12"
-          >
-            <motion.button
-              onClick={() => scrollToSection("#about")}
-              className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-            >
-              <span className="text-sm">Scroll to explore</span>
-              <ArrowDown className="h-5 w-5" />
-            </motion.button>
-          </motion.div>
+          
         </motion.div>
       </div>
     </section>

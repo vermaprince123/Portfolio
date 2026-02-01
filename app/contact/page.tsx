@@ -1,11 +1,10 @@
 import { PortfolioLayout } from "@/components/portfolio-layout";
-import { Hero } from "@/components/sections/hero";
+import { Contact } from "@/components/sections/contact";
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <PortfolioLayout>
-      <Hero />
+      <Contact />
     </PortfolioLayout>
   );
 }
-

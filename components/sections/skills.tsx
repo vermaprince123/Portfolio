@@ -27,7 +27,7 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-muted/30">
+    <section id="skills" className="pt-24 pb-20 md:pt-32 md:pb-32 bg-muted/30 min-h-screen">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

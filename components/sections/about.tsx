@@ -28,7 +28,7 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-background">
+    <section id="about" className="pt-24 pb-20 md:pt-32 md:pb-32 bg-background min-h-screen">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
