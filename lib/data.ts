@@ -86,6 +86,22 @@ export const projects = [
     featured: true,
   },
   {
+    id: 10,
+    title: "Hybrid Cache System",
+    description:
+      "A hybrid caching solution combining Redis as a distributed cache and Caffeine for ultra-fast in-memory caching in Java.",
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Redis",
+      "Caffeine Cache",
+      "Spring Cache",
+    ],
+    githubUrl: "https://github.com/vermaprince123/redis-caffeine-cache",
+    liveUrl: null,
+    featured: true,
+  },
+  {
     id: 3,
     title: "Portfolio Website",
     description:
@@ -176,6 +192,21 @@ export const projects = [
       "Backend Development",
     ],
     githubUrl: "https://github.com/vermaprince123/Spring-Boot-Store-Project",
+    liveUrl: null,
+    featured: true,
+  },
+  {
+    id: 11,
+    title: "Query Indexing",
+    description:
+      "Experiments with database indexing strategies (single-column and composite indexes) to analyze and optimize query performance in a relational database.",
+    technologies: [
+      "Java",
+      "MySQL",
+      "Indexing",
+      "Spring Boot",
+    ],
+    githubUrl: "https://github.com/vermaprince123/db-indexing",
     liveUrl: null,
     featured: true,
   },
