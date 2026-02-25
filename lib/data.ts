@@ -179,6 +179,23 @@ export const projects = [
     liveUrl: null,
     featured: true,
   },
+  {
+    id: 10,
+    title: "SecureVault",
+    description:
+      "A secure vault application built with Spring Boot and Java, providing secure storage and management of sensitive data. Features robust security implementations, RESTful APIs, and enterprise-grade backend architecture.",
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "Maven",
+      "Security",
+      "Backend Development",
+    ],
+    githubUrl: "https://github.com/vermaprince123/securevault",
+    liveUrl: null,
+    featured: true,
+  },
 ];
 
 export const experience = [
